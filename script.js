@@ -1,11 +1,11 @@
 // TODO: Fix the width and height of actual gridContainer, only change the square size!
 
-
 let gridRows = 70;
 let gridColumns = 130;
 let squareDim = 10;
 let color = "green";
 let isRainbow = false
+let isEraser = false;
 let colors = ["green", "blue", "red", "purple", "pink", "black", "yellow", "orange", "gray", "indigo"];
 
 const gridContainer = document.createElement("div");
@@ -86,21 +86,46 @@ colorButton.addEventListener("click", () => {
 
 const rainbowButton = document.createElement("button");
 rainbowButton.classList.add("btn");
+rainbowButton.style.color = "blue";
 rainbowButton.textContent = "Rainbow";
 rainbowButton.addEventListener("click", () => {
+  if (isEraser) {
+    isEraser = false;
+  }
   if (isRainbow) {
     isRainbow = false;
     rainbowButton.textContent = "Rainbow"
+    rainbowButton.style.color = "blue"
     color = "green";
   } else {
     isRainbow = true;
     rainbowButton.textContent = "Normal";
+    rainbowButton.style.color = "black"
+  }
+});
+
+const eraserButton = document.createElement("button");
+eraserButton.classList.add("btn");
+eraserButton.textContent = "Eraser";
+eraserButton.addEventListener("click", () => {
+  if (isEraser) {
+    isEraser = false;
+    color = "green";
+  } else {
+    isEraser = true
+    if (isRainbow) {
+      isRainbow = false
+      rainbowButton.textContent = "Rainbow"
+      rainbowButton.style.color = "blue"
+    }
+    color = "white";
   }
 });
 
 buttonContainer.appendChild(dimButton);
 buttonContainer.appendChild(colorButton);
 buttonContainer.appendChild(rainbowButton);
+buttonContainer.appendChild(eraserButton);
 buttonContainer.appendChild(clearButton)
 
 document.querySelector("body").appendChild(buttonContainer);

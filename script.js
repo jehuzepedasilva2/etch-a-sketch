@@ -91,6 +91,7 @@ rainbowButton.textContent = "Rainbow";
 rainbowButton.addEventListener("click", () => {
   if (isEraser) {
     isEraser = false;
+    eraserButton.textContent = "Eraser"
   }
   if (isRainbow) {
     isRainbow = false;
@@ -110,9 +111,11 @@ eraserButton.textContent = "Eraser";
 eraserButton.addEventListener("click", () => {
   if (isEraser) {
     isEraser = false;
+    eraserButton.textContent = "Eraser"
     color = "green";
   } else {
     isEraser = true
+    eraserButton.textContent = "Pencil"
     if (isRainbow) {
       isRainbow = false
       rainbowButton.textContent = "Rainbow"

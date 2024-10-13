@@ -1,3 +1,6 @@
+// TODO: Fix the width and height of actual gridContainer, only change the square size!
+
+
 let gridRows = 70;
 let gridColumns = 130;
 let squareDim = 10;

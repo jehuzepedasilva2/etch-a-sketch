@@ -1,6 +1,6 @@
-let gridRows = 35;
-let gridColumns = 35;
-let squareDim = 20;
+let gridRows = 70;
+let gridColumns = 130;
+let squareDim = 10;
 let color = "green";
 let isRainbow = false
 let colors = ["green", "blue", "red", "purple", "pink", "black", "yellow", "orange", "gray", "indigo"];
@@ -31,9 +31,9 @@ function buildGrid() {
     flex-wrap: wrap;
     width: ${gridColumns*squareDim}px;
     height: ${gridRows*squareDim}px;
-    outline: black solid 2px;
     padding: 0;
     margin: 0;
+    border: 3px solid black;
   `);
 
   for (let i = 0; i < gridRows*gridColumns; i++) {

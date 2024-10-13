@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+
 body {
   display: flex;
   flex-direction: column;
@@ -14,6 +16,7 @@ body {
 }
 
 .btn {
+  font-family: "Sixtyfour Convergence";
   flex: 1 1 auto;
   width: max-content;
   font-size: 20px; 
